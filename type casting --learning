@@ -1,0 +1,29 @@
+// Write a program in java to take a input as a string and return the given integer as a integer value and find that the given number is a factor of 5
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("string: ");
+        String inputString = sc.nextLine();
+
+        if (isNumeric(inputString)) {
+            int number = Integer.parseInt(inputString);
+            if (number % 5 == 0) {
+                System.out.println(number + " is a factor of 5.");
+            } else {
+                System.out.println(number + " is not a factor of 5.");
+            }
+        } else {
+            System.out.println("Input is not a numeric value.");
+        }
+    }
+    public static boolean isNumeric(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+}
